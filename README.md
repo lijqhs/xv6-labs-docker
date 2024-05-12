@@ -1,4 +1,4 @@
-# xv6-labs-docker
+# Docker Image for xv6 labs
 
 This repository contains a Dockerfile for setting up an Ubuntu 22.04 environment to work with the xv6 operating system labs. The Docker container includes all the necessary tools and dependencies for building, running, and debugging xv6 using QEMU.
 
