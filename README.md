@@ -33,7 +33,7 @@ cd xv6-labs-2023
 3. Run the Docker container:
 
    ```
-   docker run -it -v $(pwd):/xv6-labs xv6-labs
+   docker run -it --rm --name xv6 --hostname xv6 -v $(pwd):/xv6-labs xv6-labs
    ```
 
    `$(pwd)` is the path to your local xv6-labs repository on your host machine (in my machine, it is `/Users/lijqhs/learn/xv6-labs-2023`). This will mount the `xv6-labs-2023` directory as a volume inside the container.
@@ -55,7 +55,7 @@ cd xv6-labs-2023
    Then open another shell window in your host machine, run into the same container:
 
    ```
-   docker exec -it <container_id_or_name> gdb-multiarch
+   docker exec -it xv6 gdb-multiarch
    ```
 
 5. When you're done, you can exit the container by typing `exit`.
