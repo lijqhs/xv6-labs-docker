@@ -87,11 +87,15 @@ cd xv6-labs-2023
 
 4. Setup GitHub with PAT
 
+   In the docker container, 
+
    ```sh
    echo "https://<github_username>:<github_PAT>@github.com" > /etc/.git-credentials
    ```
 
 5. Git Clone Xv6 repo
+
+   In the docker container,
 
    ```sh
    git clone git://g.csail.mit.edu/xv6-labs-2023
