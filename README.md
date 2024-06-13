@@ -106,6 +106,20 @@ To use qemu in this docker container, the same as step 4 in Scenario 1.
 
 Connect to container with `Dev Container` extension in VS Code.
 
+### Issues
+
+When using VS Code to connect to the container, it seems that VS Code will change `.gitconfig` to be:
+
+```
+[credential]
+        helper = "!f() { /root/.vscode-server/bin/89de5a8d4d6205e5b11647eb6a74844ca23d2573/node /tmp/vscode-remote-containers-f9efd0da-7ded-401b-9756-943f357e6db2.js git-credential-helper $*; }; f"
+```
+
+Then the credential setup in docker image will not be effective, VS Code asks you to input your username, which is not expected. The purpose of this Scenario is to separate Git account environment from the host machine. So we need to run this command in container again:
+
+```sh
+git config --global credential.helper 'store --file=/etc/.git-credentials'
+```
 
 ## Customization
 
