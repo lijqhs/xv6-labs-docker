@@ -63,3 +63,19 @@ cd xv6-labs-2023
 ## Customization
 
 If you need to install additional packages or make modifications to the Docker environment, you can edit the `Dockerfile` and rebuild the image using the `docker build` command.
+
+## Add GitHub with Docker
+
+Setup GitHub with PAT
+
+```sh
+echo "https://<github_username>:<github_PAT>@github.com" > .git-credentials
+```
+
+```sh
+docker build -f xv6.dockerfile -t xv6-labs-host . 
+```
+
+```sh
+docker run -it --name xv6-host --hostname xv6-host xv6-labs-host
+```
