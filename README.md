@@ -21,44 +21,44 @@ cd xv6-labs-2023
 
 1. Clone this repository:
 
-```sh
-git clone https://github.com/lijqhs/xv6-labs-docker.git
-cd xv6-labs-docker
-```
+   ```sh
+   git clone https://github.com/lijqhs/xv6-labs-docker.git
+   cd xv6-labs-docker
+   ```
 
 2. Build the Docker image:
 
-```sh
-docker build -t xv6-labs .
-```
+   ```sh
+   docker build -t xv6-labs .
+   ```
 
 3. Run the Docker container:
 
-```sh
-docker run -it --rm --name xv6 --hostname xv6 -v $(pwd):/xv6-labs xv6-labs
-```
+   ```sh
+   docker run -it --rm --name xv6 --hostname xv6 -v $(pwd):/xv6-labs xv6-labs
+   ```
 
-`$(pwd)` is the path to your local xv6-labs repository on your host machine (in my machine, it is `/Users/lijqhs/learn/xv6-labs-2023`). This will mount the `xv6-labs-2023` directory as a volume inside the container.
+   `$(pwd)` is the path to your local xv6-labs repository on your host machine (in my machine, it is `/Users/lijqhs/learn/xv6-labs-2023`). This will mount the `xv6-labs-2023` directory as a volume inside the container.
 
 4. Inside the container, the above command will navigate automatically to the `/xv6-labs` directory. To build and run xv6 labs, you can use the following commands:
 
-```sh
-make qemu
-```
+   ```sh
+   make qemu
+   ```
 
-To debug xv6 using GDB, you can use:
+   To debug xv6 using GDB, you can use:
 
-```sh
-make qemu-gdb
-```
+   ```sh
+   make qemu-gdb
+   ```
 
-The `.gdbinit` file is already configured to automatically load the `.gdbinit` file from the `/xv6-labs-2023` directory.
+   The `.gdbinit` file is already configured to automatically load the `.gdbinit` file from the `/xv6-labs-2023` directory.
 
-Then open another shell window in your host machine, run into the same container:
+   Then open another shell window in your host machine, run into the same container:
 
-```sh
-docker exec -it xv6 gdb-multiarch
-```
+   ```sh
+   docker exec -it xv6 gdb-multiarch
+   ```
 
 5. When you're done, you can exit the container by typing `exit`.
 
@@ -68,35 +68,35 @@ docker exec -it xv6 gdb-multiarch
 
 1. Clone this repository:
 
-```sh
-git clone https://github.com/lijqhs/xv6-labs-docker.git
-cd xv6-labs-docker
-```
+   ```sh
+   git clone https://github.com/lijqhs/xv6-labs-docker.git
+   cd xv6-labs-docker
+   ```
 
 2. Build the Docker image:
 
-```sh
-docker build -t xv6-labs .
-```
+   ```sh
+   docker build -t xv6-labs .
+   ```
 
 3. Run the Docker container:
 
-```sh
-docker run -it --name xv6 --hostname xv6 xv6-labs
-```
+   ```sh
+   docker run -it --name xv6 --hostname xv6 xv6-labs
+   ```
 
 4. Setup GitHub with PAT
 
-```sh
-echo "https://<github_username>:<github_PAT>@github.com" > /etc/.git-credentials
-```
+   ```sh
+   echo "https://<github_username>:<github_PAT>@github.com" > /etc/.git-credentials
+   ```
 
 5. Git Clone Xv6 repo
 
-```sh
-git clone git://g.csail.mit.edu/xv6-labs-2023
-cd xv6-labs-2023
-```
+   ```sh
+   git clone git://g.csail.mit.edu/xv6-labs-2023
+   cd xv6-labs-2023
+   ```
 
 To use qemu in this docker container, the same as step 4 in Scenario 1.
 
