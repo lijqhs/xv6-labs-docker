@@ -17,7 +17,9 @@ cd xv6-labs-2023
 
 ## Usage
 
-### Scenario 1: as an environment tool for Xv6 labs in host machine
+### Scenario 1: as an environment tool
+
+The Xv6 labs repo is stored and uses git account in host machine. The container can be removed whenever you want. All your work is on your host machine.
 
 1. Clone this repository:
 
@@ -41,7 +43,7 @@ cd xv6-labs-2023
    - `$(pwd)` is the path to your local xv6-labs repository on your host machine (in my machine, it is `/Users/lijqhs/learn/xv6-labs-2023`). This will mount the `xv6-labs-2023` directory as a volume inside the container `/code/xv6-labs-2023`.
    - `-w` or `--workdir` option is to change the working directory to `/code/xv6-labs-2023` within the container.
 
-4. Inside the container, the above command will navigate automatically to the `/code` directory. To build and run xv6 labs, you can use the following commands:
+4. Inside the container, the above command will navigate automatically to the `/code/xv6-labs-2023` directory. To build and run xv6 labs, you can use the following commands:
 
    ```sh
    make qemu
@@ -66,6 +68,8 @@ cd xv6-labs-2023
 
 
 ### Scenario 2: as a new machine
+
+The Xv6 labs repo is stored and uses git account in the container. You will set git account in container. The container cannot be simply removed before you push your work to GitHub, otherwise you will lose your work.
 
 1. Clone this repository:
 
@@ -96,7 +100,7 @@ cd xv6-labs-2023
 
 5. Git Clone Xv6 repo
 
-   In the docker container,
+   In the docker container, download xv6 labs repo into `/code/xv6-labs-2023`:
 
    ```sh
    git clone git://g.csail.mit.edu/xv6-labs-2023
