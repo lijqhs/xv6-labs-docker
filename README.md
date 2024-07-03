@@ -35,10 +35,11 @@ cd xv6-labs-2023
 3. Run the Docker container:
 
    ```sh
-   docker run -it --rm --name xv6 --hostname xv6 -v $(pwd):/code xv6-labs
+   docker run -it --rm --name xv6 --hostname xv6 -v $(pwd):/code/xv6-labs-2023 -w /code/xv6-labs-2023 xv6-labs
    ```
 
-   `$(pwd)` is the path to your local xv6-labs repository on your host machine (in my machine, it is `/Users/lijqhs/learn/xv6-labs-2023`). This will mount the `xv6-labs-2023` directory as a volume inside the container.
+   - `$(pwd)` is the path to your local xv6-labs repository on your host machine (in my machine, it is `/Users/lijqhs/learn/xv6-labs-2023`). This will mount the `xv6-labs-2023` directory as a volume inside the container `/code/xv6-labs-2023`.
+   - `-w` or `--workdir` option is to change the working directory to `/code/xv6-labs-2023` within the container.
 
 4. Inside the container, the above command will navigate automatically to the `/code` directory. To build and run xv6 labs, you can use the following commands:
 
