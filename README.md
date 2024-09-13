@@ -133,6 +133,13 @@ Then the credential setup in docker image will not be effective, VS Code asks yo
 git config --global credential.helper 'store --file=/etc/.git-credentials'
 ```
 
+Or disallow VSCode to copy git config by adding the following to VSCode settings:
+
+```
+    "remote.containers.copyGitConfig": true,
+    "remote.containers.gitCredentialHelperConfigLocation": "none"
+```
+
 ## Customization
 
 If you need to install additional packages or make modifications to the Docker environment, you can edit the `Dockerfile` and rebuild the image using the `docker build` command.
