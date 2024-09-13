@@ -90,15 +90,22 @@ The Xv6 labs repo is stored and uses git account in the container. You will set 
    docker run -it --name xv6 --hostname xv6 xv6-labs
    ```
 
-4. Setup GitHub with PAT
+4. Setup GitHub Authentications
+   1. with SSH 
+   It is recommended to [use GitHub with SSH](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent), which is more secure for long-term use.
+   - Generate SSH key: `ssh-keygen -t ed25519 -C "your_email@example.com"`
+   - Add SSH key: `cat ~/.ssh/id_ed25519.pub`, copy and paste to GitHub settings.
+   - Test: `ssh -T git@github.com`
 
-   In the docker container, 
+   2. with PAT
+   
+   Another optional way is to [use PAT](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens), which is very easy to setup. In the docker container:
 
    ```sh
    echo "https://<github_username>:<github_PAT>@github.com" > /etc/.git-credentials
    ```
 
-5. Git Clone Xv6 repo
+1. Git Clone Xv6 repo
 
    In the docker container, download xv6 labs repo into `/code/xv6-labs-2023`:
 
